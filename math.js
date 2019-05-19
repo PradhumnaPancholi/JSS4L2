@@ -29,7 +29,7 @@ const calculateRoute = (req, res) => {
         res.send('Both values must be a number')
     }
 
-    if(!validOperators.includes(method.toLowerCase)) {
+    if(!validOperators.includes(method.toLowerCase())) {
         res.send('Not a valid operator')
     }
 
