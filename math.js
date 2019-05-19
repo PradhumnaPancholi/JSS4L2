@@ -1,13 +1,13 @@
 const calculate = (method, x, y) => {
-    switch(method.toLowercase()) {
+    switch(method.toLowerCase()) {
         case 'add':
-            return {result: x+y}
+            return {operator: '+', result: x+y}
         case 'subtract':
-            return {result: x-y}
+            return {operator: '-', result: x-y}
         case 'multiply':
-            return {result: x*y}
+            return {operator: '*', result: x*y}
         case 'divide':
-            return {result: x/y}
+            return {operator: '/', result: x/y}
         default:
             return 'This is not a valid option'
     }
@@ -29,12 +29,12 @@ const calculateRoute = (req, res) => {
         res.send('Both values must be a number')
     }
 
-    if(!validOperators.includes(method.toLowercase())) {
+    if(!validOperators.includes(method.toLowerCase)) {
         res.send('Not a valid operator')
     }
 
     const {operator, result} = calculate(method, x, y)
-        res.send(`${x} ${y} = ${result}`)
+        res.send(`${x} ${operator} ${y} = ${result}`)
 }
 
 module.exports = calculateRoute
