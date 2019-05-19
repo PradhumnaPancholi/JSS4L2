@@ -4,7 +4,7 @@ const doMath = require('./math')
 var bodyParser = require('body-parser')
 
 // index route//
-app.get('/', doMath())
+app.get('/', doMath)
 
 app.listen(3000)
 
